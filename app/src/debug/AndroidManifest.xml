@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Debug builds only: test hook to simulate outages on emulators without root. Never in release. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <receiver
+            android:name=".DebugNetworkReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.akshayAshokCode.backonline.debug.RECHECK" />
+                <action android:name="com.akshayAshokCode.backonline.debug.FORCE_TV" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

@@ -1,0 +1,153 @@
+<resources>
+    <!-- Translator notes: "BackOnline" is the app name — never translate it.
+         Users in every country read these lines, many in English as a second language.
+         Keep sentences short and literal. Adapt the meaning; avoid idioms, slang and puns. -->
+    <string name="app_name" translatable="false">BackOnline</string>
+
+    <!-- Status of the watched connection (titles) -->
+    <string name="status_online">You are online</string>
+    <string name="status_back_online">You are back online</string>
+    <string name="status_sign_in">Sign-in needed</string>
+    <string name="status_no_internet">Connected, but no internet</string>
+    <string name="status_disconnected_wifi">Wi-Fi disconnected</string>
+    <string name="status_disconnected_home">Not connected</string>
+    <string name="status_disconnected_mobile">No mobile connection</string>
+    <string name="status_wifi_off">Wi-Fi is off</string>
+    <string name="status_airplane">Airplane mode is on</string>
+    <string name="status_internet_back">✓ The internet is back!</string>
+
+    <!-- Connection types -->
+    <string name="medium_wifi">Wi-Fi</string>
+    <string name="medium_ethernet">Ethernet</string>
+    <string name="medium_mobile">Mobile data</string>
+
+    <!-- Signal quality (shown next to the dBm value) -->
+    <string name="signal_excellent">Excellent</string>
+    <string name="signal_good">Good</string>
+    <string name="signal_fair">Fair</string>
+    <string name="signal_weak">Weak</string>
+
+    <!-- Messages -->
+    <string name="headline">Stop checking. We will tell you.</string>
+    <string name="trust_1">Put your phone down. We will watch your connection for you.</string>
+    <string name="trust_2">No false alerts. We wait until the internet really works.</string>
+    <string name="online_hint">Open BackOnline when the internet goes down.</string>
+    <string name="armed_title">✓ Done. You can stop checking now.</string>
+    <!-- %1$s = time, e.g. 10:42 -->
+    <string name="armed_since">Waiting since %1$s</string>
+    <string name="armed_style_ring">Your phone will ring when the internet is back.</string>
+    <string name="armed_style_notification">You will get a notification when the internet is back.</string>
+    <string name="wifi_off_hint">Wi-Fi is off. Turn it on so your phone can reconnect.</string>
+    <string name="airplane_hint">Airplane mode is on. Turn it off so your phone can connect to mobile data.</string>
+    <string name="sign_in_hint">This Wi-Fi asks you to sign in. Open Wi-Fi settings and tap the network to sign in.</string>
+    <string name="notifications_off_hint">Notifications are off. Allow them so we can tell you when the internet is back.</string>
+    <string name="stopped_resumed">Your phone stopped BackOnline in the background. We turned it back on.</string>
+    <string name="stopped_missed">Your phone stopped BackOnline in the background, so we could not alert you. The internet is back now.</string>
+    <string name="battery_hint">To keep the alert running, open App info and allow background use in the battery settings.</string>
+    <string name="not_supported">This device has no Wi-Fi, Ethernet or mobile data for BackOnline to watch.</string>
+
+    <!-- Buttons -->
+    <string name="button_arm">Notify me when it is back</string>
+    <string name="button_cancel">Stop waiting</string>
+    <string name="button_online">You are online</string>
+    <string name="button_wifi_settings">Turn on Wi-Fi</string>
+    <string name="button_airplane_settings">Turn off airplane mode</string>
+    <string name="button_notification_settings">Allow notifications</string>
+    <string name="button_sign_in">Open Wi-Fi settings</string>
+    <string name="button_app_info">Open App info</string>
+    <string name="button_stop_sound">Stop the sound</string>
+
+    <!-- Alert style -->
+    <string name="style_ring">Ring</string>
+    <string name="style_notification">Notification</string>
+    <string name="style_ring_hint">Rings until you stop it, up to 1 minute. It rings even on silent.</string>
+    <string name="style_notification_hint">You will get a normal notification.</string>
+
+    <!-- TV status board -->
+    <string name="tv_hint_idle">When the internet goes down, select the button and relax. This screen will tell everyone when it is back.</string>
+    <string name="tv_hint_armed">This screen will show when the internet is back, with a sound.</string>
+
+    <!-- TV automatic alerts -->
+    <string name="auto_on">Automatic alerts: On</string>
+    <string name="auto_off">Automatic alerts: Off</string>
+    <string name="auto_hint_on">This TV watches the internet and plays a sound when it comes back after an outage.</string>
+    <string name="auto_hint_off">Turn on automatic alerts to hear a sound after every outage, without pressing anything.</string>
+    <!-- %1$s = number of outages, e.g. "3 outages"; %2$s = total time, e.g. "2 hours 14 minutes" -->
+    <string name="history_week">Last 7 days: %1$s · %2$s</string>
+    <string name="history_none">No outages in the last 7 days.</string>
+    <plurals name="outages">
+        <item quantity="one">%d outage</item>
+        <item quantity="other">%d outages</item>
+    </plurals>
+    <string name="channel_watching">Watching your connection</string>
+    <string name="channel_watching_desc">Shown while this TV watches the internet for automatic alerts.</string>
+    <string name="notif_watching_title">BackOnline is watching your connection</string>
+    <string name="notif_watching_text">You will hear a sound when the internet comes back after an outage.</string>
+
+    <!-- How long the user waited. %1$s = a duration like "42 minutes" or "1 hour 5 minutes". -->
+    <string name="back_after">Back after %1$s</string>
+    <string name="less_than_a_minute">less than a minute</string>
+    <string name="hours_and_minutes">%1$s %2$s</string>
+    <plurals name="minutes">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <plurals name="hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+
+    <!-- Notifications -->
+    <string name="channel_waiting">Waiting for the internet</string>
+    <string name="channel_waiting_desc">Shown while BackOnline waits for your internet to come back.</string>
+    <string name="channel_alert">Internet is back</string>
+    <string name="channel_alert_desc">Alerts you when your internet works again.</string>
+    <string name="channel_ringing">Internet is back (ringing)</string>
+    <string name="channel_ringing_desc">Shown while your phone rings to tell you the internet is back.</string>
+    <!-- %1$s = time, e.g. 10:42 -->
+    <string name="notif_waiting_title">Waiting for the internet · since %1$s</string>
+    <string name="notif_status_disconnected_wifi">Wi-Fi disconnected · waiting…</string>
+    <string name="notif_status_disconnected_home">Not connected · waiting…</string>
+    <string name="notif_status_disconnected_mobile">No mobile connection · waiting…</string>
+    <string name="notif_status_no_internet_wifi">Wi-Fi connected · checking internet…</string>
+    <string name="notif_status_no_internet_ethernet">Ethernet connected · checking internet…</string>
+    <string name="notif_status_no_internet_mobile">Mobile data connected · checking internet…</string>
+    <string name="notif_status_sign_in">Sign-in needed · open Wi-Fi settings to sign in</string>
+    <string name="notif_cancel">Stop waiting</string>
+    <string name="notif_stop">Stop</string>
+    <string name="notif_back_title">✓ The internet is back!</string>
+    <string name="notif_stopped_title">BackOnline stopped waiting</string>
+    <!-- %1$s = a duration such as "12 hours" -->
+    <string name="notif_timeout_text">The internet was still down after %1$s. Turn the alert on again if you need it.</string>
+    <string name="notif_stopped_text">Your phone stopped the alert in the background. Open BackOnline to turn it on again.</string>
+
+    <!-- Quick Settings tile (keep very short) -->
+    <string name="tile_label">Internet alert</string>
+    <string name="tile_off">Off</string>
+    <string name="tile_waiting">Waiting…</string>
+
+    <!-- Shown one at a time while waiting -->
+    <string-array name="waiting_lines">
+        <item>The internet is taking a break. You can take one too.</item>
+        <item>Good time to talk to someone near you. 🙂</item>
+        <item>Rest your eyes. Look at something far away.</item>
+        <item>Open a window. Get some fresh air. 🌿</item>
+        <item>Drink some water. Stretch a little.</item>
+        <item>Step outside for a few minutes, if you can.</item>
+        <item>Make a warm drink. We will wait for you. ☕</item>
+        <item>Call a friend or a family member.</item>
+        <item>Read a few pages of a book. 📖</item>
+        <item>No need to check your phone. We are checking for you.</item>
+    </string-array>
+    <string-array name="back_lines">
+        <item>You are online again.</item>
+        <item>Welcome back! We hope you had a nice break. 🌿</item>
+        <item>You are online again, and you did not have to check once.</item>
+    </string-array>
+    <!-- Used after waiting for more than 1 hour -->
+    <string-array name="long_outage_lines">
+        <item>The internet is still down. We are still watching.</item>
+        <item>Still waiting. Maybe go for a short walk? 🚶</item>
+        <item>This is taking a while. Do something you enjoy. We will tell you.</item>
+    </string-array>
+</resources>

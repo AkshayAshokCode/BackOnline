@@ -1,0 +1,11 @@
+<!-- Android 7.x (no adaptive icons): round green badge with the mark -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp" android:height="48dp"
+    android:viewportWidth="48" android:viewportHeight="48">
+    <path android:fillColor="#FF1E9E6A" android:pathData="M24,2a22,22 0,1 1,0 44a22,22 0,1 1,0 -44z" />
+    <group android:scaleX="1.25" android:scaleY="1.25" android:translateX="9" android:translateY="9">
+        <path android:pathData="M2,13 L6.5,13 L8.5,9 L11,17 L13.5,10.5 L15.5,14 L21.5,6.5"
+            android:strokeColor="#FFFFFFFF" android:strokeWidth="2.2"
+            android:strokeLineCap="round" android:strokeLineJoin="round" />
+    </group>
+</vector>

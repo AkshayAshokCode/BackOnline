@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <!-- 24-unit mark scaled into the adaptive-icon safe zone -->
+    <group android:scaleX="2.4" android:scaleY="2.4" android:translateX="25.2" android:translateY="25.2">
+        <path android:pathData="M2,13 L6.5,13 L8.5,9 L11,17 L13.5,10.5 L15.5,14 L21.5,6.5"
+            android:strokeColor="#FFFFFFFF" android:strokeWidth="2.2"
+            android:strokeLineCap="round" android:strokeLineJoin="round" />
+    </group>
+</vector>

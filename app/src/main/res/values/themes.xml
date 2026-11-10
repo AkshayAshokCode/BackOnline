@@ -1,0 +1,10 @@
+<resources>
+    <!-- Bar colours are set in code with enableEdgeToEdge(); only the window background lives here -->
+    <style name="Theme.BackOnline" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+    </style>
+    <!-- TV is always dark: it sits in living rooms and should not light up the room -->
+    <style name="Theme.BackOnline.Tv" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+</resources>
