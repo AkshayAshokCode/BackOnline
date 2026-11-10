@@ -13,3 +13,5 @@
 *.keystore
 *.jks
 google-services.json
+keystore.properties
+play/fgs-demo.mp4

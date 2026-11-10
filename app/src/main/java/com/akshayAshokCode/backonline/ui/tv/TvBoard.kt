@@ -16,13 +16,18 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -219,7 +224,7 @@ private fun weekSummary(outages: List<Outage>): String {
     if (recent.isEmpty()) return stringResource(R.string.history_none)
     return stringResource(
         R.string.history_week,
-        context.resources.getQuantityString(R.plurals.outages, recent.size, recent.size),
+        pluralStringResource(R.plurals.outages, recent.size, recent.size),
         AlertNotifications.duration(context, recent.sumOf { it.durationMs })
     )
 }
@@ -234,11 +239,17 @@ private fun BoardButton(
     onClick: () -> Unit
 ) {
     val focusRequester = remember(key) { FocusRequester() }
+    // Colour from our own focus state: the button's built-in focus colour is sometimes not drawn when
+    // it takes focus without a key press (e.g. "Stop the sound" when the ring starts)
+    var focused by remember(key) { mutableStateOf(false) }
+    val idle = if (primary) BrandColors.Green.copy(alpha = 0.25f) else Color.White.copy(alpha = 0.08f)
     Button(
         onClick = onClick,
-        modifier = Modifier.focusRequester(focusRequester),
+        modifier = Modifier
+            .focusRequester(focusRequester)
+            .onFocusChanged { focused = it.isFocused },
         colors = ButtonDefaults.colors(
-            containerColor = if (primary) BrandColors.Green.copy(alpha = 0.25f) else Color.White.copy(alpha = 0.08f),
+            containerColor = if (focused) BrandColors.Green else idle,
             contentColor = Color.White,
             focusedContainerColor = BrandColors.Green,
             focusedContentColor = Color.White
@@ -248,10 +259,17 @@ private fun BoardButton(
     }
     if (requestFocus) {
         LaunchedEffect(key) {
-            try {
-                focusRequester.requestFocus()
-            } catch (_: IllegalStateException) {
-                // Not laid out yet — the user can still move focus with the remote
+            // When this button replaces the focused one (e.g. "Stop the sound" replacing "Cancel"), it
+            // may not be attached yet: wait a frame, then retry for a few. OK on the remote must hit it
+            withFrameNanos { }
+            repeat(10) {
+                val focused = try {
+                    focusRequester.requestFocus()
+                } catch (_: IllegalStateException) {
+                    false
+                }
+                if (focused) return@LaunchedEffect
+                withFrameNanos { }
             }
         }
     }
